@@ -6,7 +6,7 @@ export function Home({productos}){
 
     return(
         <div>
-            <h1 class='font-bold text-2xl'>Tienda!</h1>
+            <h1 class="font-400 text-2xl md:text-3xl text-center font-bold">Tienda!</h1>
             <div class="grid grid-cols-2 gap-4 mt-4">
             {productos.map((item, index) => (
                 <form class="bg-blue-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
