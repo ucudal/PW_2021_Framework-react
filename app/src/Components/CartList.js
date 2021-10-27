@@ -7,12 +7,15 @@ export function CartList({items}){
     return(
         <div>
             {items.map((item, index) => (
-                <div style={{display: "flex", flexDirection: "row", margin: "1em"}}>
-                    <p>{item.qty} - - </p>
-                    <p>{item.name}: </p>
-                    <p>$ {item.cost} - </p>
-                    <button onClick={() => onRemove(item)}>x</button>
-                </div>
+
+                <form class="bg-green-200 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <p class="text-center leading-loose">{item.name}: </p>
+                    <p class="text-center leading-loose">Cantidad: {item.qty} </p>
+                    <p class="text-center leading-loose text-gray-700">$ {item.cost} </p>
+                    <br></br>
+                    <div class="md:w-1/2"></div>
+                    <button class=" shadow bg-red-600 hover:bg-red-800 text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded" onClick={() => onRemove(item)}> Eliminar del carrito </button>
+                </form>
             ))}
         </div>
     )
