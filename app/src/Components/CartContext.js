@@ -8,7 +8,6 @@ export function useCart(){
 
 export function CartProvider({children}) {
 
-    const [isCartOpen, setCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [cartTotal, setCartTotal] = useState();
     let localCart = localStorage.getItem("cart");
@@ -27,8 +26,14 @@ export function CartProvider({children}) {
     }, []) //the empty array ensures useEffect only runs once
 
     useEffect(() => {
+        let total = 0
         let stringCart = JSON.stringify(cartItems);
         localStorage.setItem("cart", stringCart)
+        cartItems.map((item, index) => {
+            total = total + (item.cost * item.qty)
+        })
+        console.log(total)
+        setCartTotal(total)
     }, [cartItems])
 
     const onAdd = (product) => {
@@ -61,46 +66,11 @@ export function CartProvider({children}) {
         }
     };
 
-    const onDelete = (product) => {
-        setCartItems(cartItems.filter((x) => x.query !== product.query));
-    }
-
-    const openCart = () => {
-        setCartOpen(true)
-    };
-
-    const closeCart = () => {
-        setCartOpen(false);
-    }
-
-    useEffect(() => {
-        let total = 0
-        cartItems.map((item, index) => {
-            total = total + (item.cost * item.qty)
-        })
-        console.log(total)
-        setCartTotal(total)
-    }, [cartItems])
-
-    const isProductOnCart = (product) => {
-        for(let i = 0; i < cartItems.length; i++){
-            if(cartItems[0].query === product.query){
-                return true
-            }
-        }
-        return false
-    }
-
     const value ={
-        isCartOpen,
-        openCart,
-        closeCart,
         cartItems,
         onAdd,
         onRemove,
         cartTotal,
-        isProductOnCart,
-        onDelete,
         setCartItems
     }
 
