@@ -6,7 +6,7 @@ import {itemData} from "./itemData";
 function App() {
     return (
       
-      <div class="min-h-screen bg-gray-900 py-6 flex flex-col justify-center sm:py-12 " className="App">
+      <div class="min-h-screen bg-gray-800 py-6 flex flex-col justify-center sm:py-12 " className="App">
         <div class="relative py-3 sm:max-w-xl sm:mx-auto">
           <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             
