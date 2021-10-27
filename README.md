@@ -21,7 +21,9 @@ Cuenta con varios foros de discusión sobre buenas prácticas y el futuro de rea
 
 React 
 
-React es una librería de JavaScript para construir aplicaciones web altamente reactivas.
+React, también conocido como ReactJS, es una potente alternativa de librería JavaScript para el desarrollo frontend.
+React por sí mismo es una librería de JavaScript para construir aplicaciones web altamente reactivas. y no un framework, puesto que se ocupa de las interfaces de usuario. Sin embargo, diversos añadidos pueden convertir a React en un producto equiparable en características a un framework. Por ejemplo, Redux, que implementa un patrón mediante el cual los datos fluyen entre componentes de la aplicación.
+
 
 Características y funcionalidades principales:
 
