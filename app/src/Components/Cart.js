@@ -7,9 +7,10 @@ export function Cart(){
 
     return(
         <div>
-            <h1>Carrito de compras</h1>
-            <p>Total: {cartTotal}</p>
+            <h1 class='font-bold text-2xl mt-4'>Carrito de compras</h1>
+            <br/>
             <CartList items={cartItems}/>
+            <p class="text-right font-bold">Total: {cartTotal}</p>
         </div>
     )
 }
